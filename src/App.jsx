@@ -17,13 +17,13 @@ function App() {
         <header>
           <h2>Doz Playz</h2>
           <div>
-            <bold>Certificate - </bold><span>Streak Winner</span>
+            <span className='large'> Certificate - </span><span>Streak Winner</span>
           </div>
         </header>
         <div className="content">
           <div className="written">
             <p>
-              This is to certify that Jai Kishan has demonstrated exceptional skill and dedication by achieving a remarkable 15-streak on Doz Playz Channel.
+              This is to certify that <span className='large'>SHOCK WAVE</span> has demonstrated exceptional skill and dedication by achieving a remarkable <span className='large'>15</span>-streak on Doz Playz Channel.
               This accomplishment is a testament to your proficiency and commitment to excellence in the gaming arena.
             </p>
    <br />
