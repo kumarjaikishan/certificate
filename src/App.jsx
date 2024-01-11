@@ -10,7 +10,7 @@ function App() {
   const [pass, setpass] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
   const init = {
-    naam: "Jai kishan kumar pandit",
+    naam: "Jai kishan kumar",
     streak: "09",
     date: "11 nov,2023"
   };
