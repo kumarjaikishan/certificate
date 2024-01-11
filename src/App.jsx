@@ -125,7 +125,7 @@ function App() {
           </div>
         </div>
         <img className="cute" src={cute} alt="" />
-        <img className="cute cute2" src={cute} alt="" />
+        <img className="cute cute2" src={cute2} alt="" />
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>

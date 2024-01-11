@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App copy.css";
 import image from "./assets/img.png";
+import cute from './assets/cute2.png'
 import html2canvas from "html2canvas";
 
 
@@ -91,6 +92,7 @@ function App() {
             <span className="large"> Certificate - </span>
             <span>Streak Winner</span>
           </div>
+          <img className="cute" src={cute} alt="" />
         </header>
         <div className="content">
           <div className="written">

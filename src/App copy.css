@@ -21,6 +21,7 @@
   & header {
     border-bottom: 2px solid yellow;
     height: 70px;
+    position: relative;
   }
 
   .content {
@@ -157,4 +158,13 @@
     z-index: -2;
     background: rgba(0, 0, 0, 0.1);
   }
+}
+.cute {
+  position: absolute;
+  top: 5px;
+  left: -16px;
+  width: 120px;
+  z-index: 5;
+  filter: drop-shadow(7px 8px 4px #222);
+  /* border: 1px solid red; */
 }
