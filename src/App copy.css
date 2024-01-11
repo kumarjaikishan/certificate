@@ -22,6 +22,7 @@
     border-bottom: 2px solid yellow;
     height: 70px;
     position: relative;
+    color: white;
   }
 
   .content {
