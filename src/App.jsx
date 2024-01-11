@@ -17,8 +17,7 @@ function App() {
   const [inp, setinp] = useState(init);
   useEffect(() => {
     const cdd = formatDate();
-    // setinp({ ...modal, date: cdd })
-    //  console.log(cdd);
+   
   }, [])
   const url =
     "https://images.unsplash.com/photo-1700909591006-a78674596074?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -57,17 +56,19 @@ function App() {
     setpass(e.target.value)
   }
   const checkpass = () => {
-    pass == "rukhi" ? setpassmodal(false):alert("Wrong Password");
+    pass == "rukhi" ? setpassmodal(false) : alert("Wrong Password");
   }
-  const imagedownload=()=>{
+  const imagedownload = () => {
+    const timenow = new Date();
+    const rand =timenow.getHours() + "."+ timenow.getMinutes()
+    // console.log(rand);
     const boxElement = document.querySelector('#box');
-
     html2canvas(boxElement)
       .then((canvas) => {
         const dataUrl = canvas.toDataURL(); // Get the data URL of the canvas
         const anchor = document.createElement('a');
         anchor.href = dataUrl;
-        anchor.download = 'certificate.png'; // Change the filename as needed
+        anchor.download = `certificate ${rand}.png`; // Change the filename as needed
         document.body.appendChild(anchor);
         anchor.click();
         document.body.removeChild(anchor);
@@ -139,7 +140,7 @@ function App() {
         <button onClick={() => setmodal(false)} >Cancel</button>
       </div> : null}
 
-     {passmodal && <div className="pass">
+      {passmodal && <div className="pass">
         <h2>Password</h2>
         <div><input value={pass} onChange={hadlepass} type="text" /></div>
         <button onClick={checkpass}>Enter</button>
