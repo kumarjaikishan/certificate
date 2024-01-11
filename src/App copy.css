@@ -162,9 +162,9 @@
 }
 .cute {
   position: absolute;
-  top: 5px;
+  top: 2px;
   left: -16px;
-  width: 120px;
+  width: 130px;
   z-index: 5;
   filter: drop-shadow(7px 8px 4px #222);
   /* border: 1px solid red; */
