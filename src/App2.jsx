@@ -7,6 +7,7 @@ import html2canvas from "html2canvas";
 
 function App() {
   const [modal, setmodal] = useState(false);
+  const [quality,setquality]= useState(2);
   const [passmodal, setpassmodal] = useState(true);
   const [pass, setpass] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
@@ -66,9 +67,9 @@ function App() {
   const imagedownload = () => {
     const timenow = new Date();
     const rand =timenow.getMinutes()
-    // console.log(rand);
+    console.log(quality);
     const boxElement = document.querySelector('#box');
-    html2canvas(boxElement,{scale:2})
+    html2canvas(boxElement,{scale:quality})
       .then((canvas) => {
         const dataUrl = canvas.toDataURL(); // Get the data URL of the canvas
         const anchor = document.createElement('a');
@@ -127,6 +128,12 @@ function App() {
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>
+        <select name="" id="" value={quality} onChange={(e)=> setquality(e.target.value)}>
+          <option disabled>--Quality--</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+        </select>
         <button onClick={imagedownload}>Download</button>
       </div>
       {modal ? <div className="modal">

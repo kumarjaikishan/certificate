@@ -97,7 +97,7 @@
 .btn {
   margin-top: 20px;
 
-  & button {
+  & button,select {
     /* color: yellow; */
     border-radius: 20px;
     color: black;
@@ -168,4 +168,7 @@
   z-index: 5;
   filter: drop-shadow(7px 8px 4px #222);
   /* border: 1px solid red; */
+}
+select,option{
+  text-align: center;
 }
