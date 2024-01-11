@@ -12,9 +12,9 @@
   background-image: url('./assets/logo.jpeg');
   position: relative;
   background-size: cover;
-  width: 700px;
-  height: 450px;
-  /* border: 1px solid red; */
+  width: 680px;
+  height: 430px;
+  border: 2px solid white;
   border-radius: 20px;
   overflow: hidden;
 
@@ -43,7 +43,7 @@
 
     .image {
       width: 35%;
-      padding: 40px 0px;
+      padding: 5px 0px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -54,8 +54,8 @@
       & img {
         /* margin: 0px auto;
         margin-top: 20px; */
-        width: 230px;
-        height: 230px;
+        width: 220px;
+        height: 220px;
         object-fit: cover;
         border-radius: 10px;
         border: 2px solid yellow;
