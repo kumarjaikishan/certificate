@@ -64,7 +64,7 @@ function App() {
   }
   const imagedownload = () => {
     const timenow = new Date();
-    const rand =timenow.getHours() + "."+ timenow.getMinutes()
+    const rand =timenow.getMinutes()
     // console.log(rand);
     const boxElement = document.querySelector('#box');
     html2canvas(boxElement)
@@ -72,7 +72,7 @@ function App() {
         const dataUrl = canvas.toDataURL(); // Get the data URL of the canvas
         const anchor = document.createElement('a');
         anchor.href = dataUrl;
-        anchor.download = `certificate ${rand}.png`; // Change the filename as needed
+        anchor.download = `${inp.naam} certificate @${rand}.png`; // Change the filename as needed
         document.body.appendChild(anchor);
         anchor.click();
         document.body.removeChild(anchor);
