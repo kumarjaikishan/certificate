@@ -106,9 +106,9 @@ function App() {
           </div>
           <div className="image">
             {selectedImage ? (
-              <img src={URL.createObjectURL(selectedImage)} alt="Selected" />
+              <img src={URL.createObjectURL(selectedImage)} alt={inp.naam} />
             ) : (
-              <img src={image} alt="" />
+              <img src={image} alt={inp.naam} />
             )}
             <h2>{inp.naam}</h2>
             <div>
