@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./App copy.css";
 import image from "./assets/img.png";
 import html2canvas from "html2canvas";
-import cute from './assets/cute.png'
-import cute2 from './assets/cute2.png'
 
 
 function App() {
@@ -124,8 +122,6 @@ function App() {
             <span className="large blue">{inp.date}</span>
           </div>
         </div>
-        <img className="cute" src={cute} alt="" />
-        <img className="cute cute2" src={cute} alt="" />
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>
