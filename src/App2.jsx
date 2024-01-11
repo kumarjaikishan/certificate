@@ -68,7 +68,7 @@ function App() {
     const rand =timenow.getMinutes()
     // console.log(rand);
     const boxElement = document.querySelector('#box');
-    html2canvas(boxElement)
+    html2canvas(boxElement,{scale:2})
       .then((canvas) => {
         const dataUrl = canvas.toDataURL(); // Get the data URL of the canvas
         const anchor = document.createElement('a');
