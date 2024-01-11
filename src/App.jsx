@@ -56,7 +56,11 @@ function App() {
     setpass(e.target.value)
   }
   const checkpass = () => {
-    pass == "rukhi" ? setpassmodal(false) : alert("Wrong Password");
+    if(pass == "rukhi" || pass == "Rukhi" || pass == "RUKHI"){
+      setpassmodal(false)
+    }else{
+      alert("Wrong Password");
+    }
   }
   const imagedownload = () => {
     const timenow = new Date();
