@@ -130,15 +130,15 @@ function App() {
       </div>
       {modal ? <div className="modal">
         <div>
-          <h2>Name</h2>
+          <h2>Name :</h2>
           <input name="naam" value={inp.naam} onChange={handle} type="text" />
         </div>
         <div>
-          <h2>streaks</h2>
+          <h2>streaks :</h2>
           <input name="streak" value={inp.streak} onChange={handle} type="tel" />
         </div>
         <div>
-          <h2>Date</h2>
+          <h2>Date :</h2>
           <input name="date" value={inp.date} onChange={handle} type="date" />
         </div>
         <div>

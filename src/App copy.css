@@ -137,7 +137,7 @@ label{
   top: 50%;
   left: 50%;
   height: 400px;
-  width: 300px;
+  width: 350px;
   transform: translate(-50%, -50%);
   /* background: #f0f0f0; */
   background: rgba(0, 0, 0, 0.6);
@@ -150,6 +150,7 @@ label{
 
     & input {
       padding: 3px 10px;
+      width: 80%;
     }
   }
 
