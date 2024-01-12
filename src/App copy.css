@@ -6,7 +6,23 @@
   padding: 2rem;
   text-align: center;
 }
-
+.wrapper{
+  background-image: url('./assets/back.jpg');
+  position: relative;
+  width: 700px;
+  height: 700px;
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+label{
+  border: 1px solid skyblue;
+  padding: 7px 10px;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
 .box {
   /* background-image: url("https://res.cloudinary.com/dusxlxlvm/image/upload/v1704886432/WhatsApp_Image_2023-08-30_at_4.55.59_PM_j27xhp.jpg"); */
   background-image: url('./assets/logo.jpeg');
@@ -14,12 +30,13 @@
   background-size: cover;
   width: 680px;
   height: 430px;
-  border: 2px solid white;
+  box-shadow:10px 20px 20px rgba(0, 0, 0, 0.7);
+  /* border: 2px solid white; */
   border-radius: 20px;
   overflow: hidden;
 
   & header {
-    border-bottom: 2px solid yellow;
+    border-bottom: 2px solid white;
     height: 70px;
     position: relative;
     color: white;
@@ -39,9 +56,9 @@
       padding: 5px;
       color: black;
       font-weight: 600;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: rgba(255, 255, 255, 0.7);
+      /* backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px); */
     }
 
     .image {
@@ -52,7 +69,7 @@
       align-items: center;
       color: whitesmoke;
       justify-content: space-around;
-      border-left: 1px solid yellow;
+      border-left: 1px solid white;
 
       & img {
         /* margin: 0px auto;
@@ -96,7 +113,7 @@
 }
 
 .btn {
-  margin-top: 20px;
+  margin-top: 10px;
 
   & button,select {
     /* color: yellow; */
@@ -137,7 +154,8 @@
   }
 
   button {
-    margin-top: 80px;
+    margin: 0 5px;
+    margin-top: 30px;
     border: 1px solid skyblue;
   }
 }
