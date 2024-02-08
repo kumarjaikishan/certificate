@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App copy.css";
-import image from "./assets/img.png";
-import cute from './assets/cute2.png'
+import image from "./assets/img.webp";
+import cute from './assets/cute2.webp'
 import html2canvas from "html2canvas";
 
 function App() {
