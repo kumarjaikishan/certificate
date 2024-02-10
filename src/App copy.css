@@ -24,7 +24,7 @@ label{
   letter-spacing: 1px;
   cursor: pointer;
 }
-.box {
+.box.theme1 {
   /* background-image: url("https://res.cloudinary.com/dusxlxlvm/image/upload/v1704886432/WhatsApp_Image_2023-08-30_at_4.55.59_PM_j27xhp.jpg"); */
   background-image: url('./assets/logo.jpeg');
   position: relative;
@@ -84,35 +84,41 @@ label{
       }
     }
   }
+  .large {
+    font-size: 1.2rem;
+    font-weight: 700;
+    /* font-family: 'Rubik Maps', system-ui; */
+    letter-spacing: 3px;
+  }
+  
+  .yellow {
+    color: yellow;
+    font-weight: 700;
+  }
+  
+  .back {
+    background: black;
+    padding: 0 7px;
+    border-radius: 5px;
+  }
+  
+  .blue {
+    color: aqua;
+    font-size: 1.1rem;
+  }
+  
+  .red {
+    color: rgb(242, 255, 0);
+  }
+  
+  
+  
+  .box p {
+    font-weight: 700;
+  }
+  
+  
 }
-
-.large {
-  font-size: 1.2rem;
-  font-weight: 700;
-  /* font-family: 'Rubik Maps', system-ui; */
-  letter-spacing: 3px;
-}
-
-.yellow {
-  color: yellow;
-  font-weight: 700;
-}
-
-.back {
-  background: black;
-  padding: 0 7px;
-  border-radius: 5px;
-}
-
-.blue {
-  color: aqua;
-  font-size: 1.1rem;
-}
-
-.red {
-  color: rgb(242, 255, 0);
-}
-
 .btn {
   margin-top: 10px;
 
@@ -127,68 +133,64 @@ label{
     background: yellow;
   }
 }
-
-.box p {
-  font-weight: 700;
-}
-
 .modal,
-.pass {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 400px;
-  width: 350px;
-  transform: translate(-50%, -50%);
-  /* background: #f0f0f0; */
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-
-  & div {
-    margin: 20px 0px;
-
-    & input {
-      padding: 3px 10px;
-      width: 80%;
+  .pass {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 400px;
+    width: 350px;
+    transform: translate(-50%, -50%);
+    /* background: #f0f0f0; */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+  
+    & div {
+      margin: 20px 0px;
+  
+      & input {
+        padding: 3px 10px;
+        width: 80%;
+      }
+    }
+  
+    button {
+      margin: 0 5px;
+      margin-top: 30px;
+      border: 1px solid skyblue;
     }
   }
-
-  button {
-    margin: 0 5px;
-    margin-top: 30px;
-    border: 1px solid skyblue;
+  
+  .pass {
+    height: 200px;
+  
+    & button {
+      margin-top: 20px;
+    }
+  
+    ::before {
+      content: "";
+      position: absolute;
+      top:95px ;
+      left: 150px;
+      width: 100vw;
+      height: 100vh;
+      transform: translate(-50%, -50%);
+      z-index: -2;
+      background: rgba(0, 0, 0, 0.1);
+    }
   }
-}
-
-.pass {
-  height: 200px;
-
-  & button {
-    margin-top: 20px;
-  }
-
-  ::before {
-    content: "";
+  .cute {
     position: absolute;
-    top:95px ;
-    left: 150px;
-    width: 100vw;
-    height: 100vh;
-    transform: translate(-50%, -50%);
-    z-index: -2;
-    background: rgba(0, 0, 0, 0.1);
+    top: 2px;
+    left: -22px;
+    width: 130px;
+    z-index: 5;
+    filter: drop-shadow(7px 8px 4px #222);
   }
-}
-.cute {
-  position: absolute;
-  top: 2px;
-  left: -22px;
-  width: 130px;
-  z-index: 5;
-  filter: drop-shadow(7px 8px 4px #222);
-}
-select,option{
-  text-align: center;
-}
+  select,option{
+    text-align: center;
+  }
+

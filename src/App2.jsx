@@ -77,7 +77,7 @@ function App() {
   return (
     <>
       <div className="wrapper" id="wrapper">
-        <div className="box" id="box">
+        <div className="box theme1" id="box">
           <header>
             <h2>Doz Playz</h2>
             <div>

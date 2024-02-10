@@ -1,28 +1,26 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import image from "./assets/img.png";
+import image from "./assets/img.webp";
+import logo from "./assets/logo.jpeg";
 import html2canvas from "html2canvas";
-import cute from './assets/cute.png'
-import cute2 from './assets/cute2.png'
-
 
 function App() {
   const [modal, setmodal] = useState(false);
-  const [passmodal, setpassmodal] = useState(true);
+  const [quality, setquality] = useState(2);
+  const [passmodal, setpassmodal] = useState(false);
   const [pass, setpass] = useState('');
   const [selectedImage, setSelectedImage] = useState(null);
+  const currentDate = new Date();
   const init = {
-    naam: "Jai kishan kumar",
+    naam: "DOZ乛SPARROW",
     streak: "09",
-    date: "11 nov,2023"
+    date: `${currentDate.getFullYear()}-${(currentDate.getMonth() + 1).toString().padStart(2, '0')}-${currentDate.getUTCDate().toString().padStart(2, '0')}`,
   };
   const [inp, setinp] = useState(init);
   useEffect(() => {
-    const cdd = formatDate();
-    inp.date=cdd;
+    // const cdd = formatDate();
   }, [])
-  const url =
-    "https://images.unsplash.com/photo-1700909591006-a78674596074?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+  const url = "https://images.unsplash.com/photo-1700909591006-a78674596074?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   const handle = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -40,41 +38,27 @@ function App() {
     setSelectedImage(imageFile);
     setmodal(false);
   }
-  function formatDate() {
-    const months = [
-      'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-    ];
-
-    const currentDate = new Date();
-    const day = currentDate.getDate();
-    const month = months[currentDate.getMonth()];
-    const year = currentDate.getFullYear();
-
-    const formattedDate = `${day} ${month}, ${year}`;
-    return formattedDate;
-  }
   const hadlepass = (e) => {
     setpass(e.target.value)
   }
   const checkpass = () => {
-    if(pass == "rukhi" || pass == "Rukhi" || pass == "RUKHI"){
+    if (pass == "rukhi" || pass == "Rukhi" || pass == "RUKHI") {
       setpassmodal(false)
-    }else{
+    } else {
       alert("Wrong Password");
     }
   }
   const imagedownload = () => {
     const timenow = new Date();
-    const rand =timenow.getMinutes()
-    // console.log(rand);
-    const boxElement = document.querySelector('#box');
-    html2canvas(boxElement,{scale:2})
+    const rand = timenow.getMinutes()
+    console.log(quality);
+    const boxElement = document.querySelector('#wrapper');
+    html2canvas(boxElement, { scale: quality })
       .then((canvas) => {
         const dataUrl = canvas.toDataURL(); // Get the data URL of the canvas
         const anchor = document.createElement('a');
         anchor.href = dataUrl;
-        anchor.download = `${inp.naam} certificate ${rand}.png`; // Change the filename as needed
+        anchor.download = `${inp.naam} certificate @${rand}.png`; // Change the filename as needed
         document.body.appendChild(anchor);
         anchor.click();
         document.body.removeChild(anchor);
@@ -83,66 +67,74 @@ function App() {
         console.error('Error generating image:', error);
       });
   }
+  const saraldate = (input) => {
+    const expenseDate = new Date(input);
+    const formattedDate = `${expenseDate.getUTCDate().toString().padStart(2, '0')} ${expenseDate.toLocaleString('default', { month: 'short' })
+      }, ${expenseDate.getFullYear().toString().substr(-2)}`;
+    return formattedDate;
+  }
 
   return (
     <>
-      <div className="box" id="box">
-        <header>
-          <h2>Doz Playz</h2>
-          <div>
-            <span className="large"> Certificate - </span>
-            <span>Streak Winner</span>
-          </div>
-        </header>
-        <div className="content">
-          <div className="written">
-            <p>
-              This is to certify that <br /> <span className="large yellow back">{inp.naam}</span><br />
-              has demonstrated exceptional skill and dedication by achieving a
-              remarkable <span className="large yellow back">{inp.streak}</span> streaks on Doz Playz
-              Channel on <span className="large yellow back">{inp.date}</span>. This accomplishment is a testament to your proficiency
-              and commitment to excellence in the gaming arena.
-            </p>
-            <br />
-            <p>
-              Bestowing upon you this certificate, we extend our congratulations
-              and sincere wishes for continued success in your gaming journey.
-              May this achievement serve as a stepping stone to even greater
-              accomplishments in your gaming future.
-            </p>
-          </div>
-          <div className="image">
+      <div className="wrapper" id="wrapper">
+        <div className="box theme2" id="box">
+            <div className="image">
             {selectedImage ? (
-              <img src={URL.createObjectURL(selectedImage)} alt={inp.naam} />
-            ) : (
-              <img src={image} alt={inp.naam} />
-            )}
-            <h2>{inp.naam}</h2>
-            <div>
-              <span className="large yellow">{inp.streak}</span> Matches Streak
+                <img src={URL.createObjectURL(selectedImage)} alt={inp.naam} />
+              ) : (
+                <img src={image} alt={inp.naam} />
+              )}
             </div>
-            <span className="large blue">{inp.date}</span>
-          </div>
+            <div>
+              <h2>{inp.naam}</h2>
+              <h2>{inp.streak} Streaks</h2>
+            </div>
+            <div>
+              <p> This is to certify that  <b>{inp.naam} </b>
+                has demonstrated exceptional skill and dedication by achieving a
+                remarkable <b>{inp.streak}</b> streaks on <b> Doz Playz </b>
+                Channel on <b>{saraldate(inp.date)}</b>. This accomplishment is a testament to your proficiency
+                and commitment to excellence in the gaming arena.</p>
+               <p>
+               Bestowing upon you this certificate, we extend our congratulations
+                and sincere wishes for continued success in your gaming journey.
+                May this achievement serve as a stepping stone to even greater
+                accomplishments in your gaming future.
+                </p>
+            </div>
+            <div className="logo">
+              <img src={logo} alt="" />
+              <h2>Doz Playz</h2>
+            </div>
+          
         </div>
-        <img className="cute" src={cute} alt="" />
-        <img className="cute cute2" src={cute2} alt="" />
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>
+        <select name="" id="" value={quality} onChange={(e) => setquality(e.target.value)}>
+          <option disabled>--Quality--</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+        </select>
         <button onClick={imagedownload}>Download</button>
       </div>
       {modal ? <div className="modal">
         <div>
-          <h2>Name</h2>
+          <h2>Name :</h2>
           <input name="naam" value={inp.naam} onChange={handle} type="text" />
         </div>
         <div>
-          <h2>streaks</h2>
+          <h2>streaks :</h2>
           <input name="streak" value={inp.streak} onChange={handle} type="tel" />
         </div>
         <div>
-          <h2>Photo</h2>
-          <input type="file" accept="image/*" />
+          <h2>Date :</h2>
+          <input name="date" value={inp.date} onChange={handle} type="date" />
+        </div>
+        <div>
+          <label htmlFor="photo">Upload Photo</label>
+          <input style={{ display: "none" }} id="photo" type="file" accept="image/*" />
         </div>
         <button onClick={sub} >SUBMIT</button>
         <button onClick={() => setmodal(false)} >Cancel</button>
