@@ -3,6 +3,7 @@ import "./App.css";
 import html2canvas from "html2canvas";
 import Theme1 from "./theme1/theme1";
 import Theme2 from "./theme2/theme2";
+import Theme3 from "./theme3/theme3";
 
 
 function App() {
@@ -80,6 +81,7 @@ function App() {
       <div className="wrapper" id="wrapper">
         {theme == 1 && <Theme1 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
         {theme == 2 && <Theme2 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
+        {theme == 3 && <Theme3 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>
@@ -93,7 +95,7 @@ function App() {
           <option disabled>--Theme--</option>
           <option value={1}>Theme 1</option>
           <option value={2}>Theme 2</option>
-          {/* <option value={3}>Theme 3</option> */}
+          <option value={3}>Theme 3</option>
         </select>
         <button onClick={imagedownload}>Download</button>
       </div>
