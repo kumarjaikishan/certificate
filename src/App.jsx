@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import image from "./assets/img.webp";
-import logo from "./assets/logo.jpeg";
 import html2canvas from "html2canvas";
+import Theme1 from "./theme1/theme1";
+import Theme2 from "./theme2/theme2";
+import Theme3 from "./theme3/theme3";
+
 
 function App() {
   const [modal, setmodal] = useState(false);
@@ -73,41 +75,13 @@ function App() {
       }, ${expenseDate.getFullYear().toString().substr(-2)}`;
     return formattedDate;
   }
-
+  const [theme, settheme] = useState(1);
   return (
     <>
       <div className="wrapper" id="wrapper">
-        <div className="box theme2" id="box">
-            <div className="image">
-            {selectedImage ? (
-                <img src={URL.createObjectURL(selectedImage)} alt={inp.naam} />
-              ) : (
-                <img src={image} alt={inp.naam} />
-              )}
-            </div>
-            <div>
-              <h2>{inp.naam}</h2>
-              <h2>{inp.streak} Streaks</h2>
-            </div>
-            <div>
-              <p> This is to certify that  <b>{inp.naam} </b>
-                has demonstrated exceptional skill and dedication by achieving a
-                remarkable <b>{inp.streak}</b> streaks on <b> Doz Playz </b>
-                Channel on <b>{saraldate(inp.date)}</b>. This accomplishment is a testament to your proficiency
-                and commitment to excellence in the gaming arena.</p>
-               <p>
-               Bestowing upon you this certificate, we extend our congratulations
-                and sincere wishes for continued success in your gaming journey.
-                May this achievement serve as a stepping stone to even greater
-                accomplishments in your gaming future.
-                </p>
-            </div>
-            <div className="logo">
-              <img src={logo} alt="" />
-              <h2>Doz Playz</h2>
-            </div>
-          
-        </div>
+        {theme == 1 && <Theme1 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
+        {theme == 2 && <Theme2 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
+        {theme == 3 && <Theme3 inp={inp} selectedImage={selectedImage} saraldate={saraldate} />}
       </div>
       <div className="btn">
         <button onClick={() => setmodal(true)}> New</button>
@@ -116,6 +90,12 @@ function App() {
           <option value={2}>2</option>
           <option value={3}>3</option>
           <option value={4}>4</option>
+        </select>
+        <select name="" id="" value={theme} onChange={(e) => settheme(e.target.value)}>
+          <option disabled>--Theme--</option>
+          <option value={1}>Theme 1</option>
+          <option value={2}>Theme 2</option>
+          <option value={3}>Theme 3</option>
         </select>
         <button onClick={imagedownload}>Download</button>
       </div>
