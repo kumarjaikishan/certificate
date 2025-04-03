@@ -20,6 +20,7 @@ function App() {
   };
   const [inp, setinp] = useState(init);
   useEffect(() => {
+    rand();
     // const cdd = formatDate();
   }, [])
   const url = "https://images.unsplash.com/photo-1700909591006-a78674596074?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
@@ -50,6 +51,42 @@ function App() {
       alert("Wrong Password");
     }
   }
+  const rand = () => {
+    let arr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789';
+    let def1 = 'P4011311';
+    let def2 = '2A14H';
+    let def3 = '';
+    
+    for (let i = 0; i < 3; i++) {
+      let fdvf = Math.floor(Math.random() * arr.length);
+      def3 = def3 + arr[fdvf];
+    };
+    
+    let final = def1 + def3 + def2;
+    console.log(final);
+  
+    // Create a temporary textarea element
+    const el = document.createElement('textarea');
+    el.value = final;
+  
+    // Append the textarea to the document body
+    document.body.appendChild(el);
+  
+    // Select the text within the textarea
+    el.select();
+  
+    try {
+      // Execute the copy command
+      document.execCommand('copy');
+      console.log('Text copied to clipboard');
+    } catch (err) {
+      console.error('Unable to copy text to clipboard:', err);
+    }
+  
+    // Remove the temporary textarea from the document body
+    document.body.removeChild(el);
+  }
+  
   const imagedownload = () => {
     const timenow = new Date();
     const rand = timenow.getMinutes()

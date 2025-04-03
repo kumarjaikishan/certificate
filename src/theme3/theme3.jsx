@@ -18,11 +18,8 @@ const Theme3 = ({inp,selectedImage,saraldate}) => {
                     <h2  className='naam'>{inp.naam}</h2>
             
                 <div>
-                    <p> This is to certify that  <b>{inp.naam} </b>
-                        has demonstrated exceptional skill and dedication by achieving a
-                        remarkable <b>{inp.streak}</b> streaks on <b> Doz Playz </b>
-                        Channel on <b>{saraldate(inp.date)}</b>. This accomplishment is a testament to your proficiency
-                        and commitment to excellence in the gaming arena.</p>
+                <p>
+Congratulations to <b>SangaTDM</b> for emerging victorious in the TDM SEASON 1 tournament (ANDROID) result declared on 12/02/2024! Your remarkable performance, strategic prowess, and unwavering determination have led you to this impressive achievement. Here's to more triumphs in the future!</p>
                     {/* <p>
                         Bestowing upon you this certificate, we extend our congratulations
                         and sincere wishes for continued success in your gaming journey.
